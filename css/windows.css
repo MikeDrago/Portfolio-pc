@@ -69,7 +69,7 @@
     cursor: grabbing;
 }
 
-.traffic-light{
+.traffic-lights{
     display: flex;
     gap: 8px;
 }
