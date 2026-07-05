@@ -1,0 +1,94 @@
+/*Pagina di caricamento di avvio*/
+
+:root{
+    --boot-bg: #000000;
+    --boot-fg: #f5f5f7;
+    --bar-track: rgba(255, 255, 255, 0.15);
+    --bar-fill: #f5f5f7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#boot-screen{
+    position: fixed;
+    inset: 0;
+    background: var(--boot-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+
+#boot-screen.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.boot-logo{
+    width: 72px;
+    height: 72px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: logoFadeIn 1s ease forwards;
+}
+
+.boot-logo svg{
+    width: 100%;
+    height: 100%;
+    fill: var(--boot-fg);
+}
+
+@keyframes logoFadeIn{
+    from{
+        opacity: 0; transform: scale(0.9);
+    }to{
+        opacity: 1; transform: scale(1);
+    }
+}
+
+.boot-progress-track{
+    width: 200px;
+    height: 4px;
+    background: var(--bar-track);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.boot-progress-fill{
+    height: 100%;
+    width: 0%;
+    background: var(--bar-fill);
+    border-radius: 2px;
+    transition: width 0.2s linear;
+}
+
+  #desktop {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(160deg, #4a6fa5 0%, #83a8d4 50%, #a9c6e8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+   .reload-hint {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+    background: rgba(0,0,0,0.25);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+  }

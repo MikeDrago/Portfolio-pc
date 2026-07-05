@@ -1,0 +1,135 @@
+:root{
+    --menubar-bg: rgba(255,255,255, 0.55);
+    --menubar-fg: #1d1d1f;
+    --dock-bg: rgba(255,255,255,0.35);
+    --dock-border: rgba(255,255,255,0.5);
+    --window-titlebar: #ececec;
+    --window-border: rgba(0,0,0,0.15);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-- Windows --*/
+
+.window{
+    position: absolute;
+    width: 480px;
+    min-width: 280px;
+    min-height: 180px;
+    height: 320px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    border: 1px solid var(--window-border);
+    display: flex;
+    flex-direction: column;
+    transform-origin: var(--origin-x, 50%) var(--origin-y, 100%);
+    animation: genieOpen 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes genieOpen {
+    from{
+        transform: scale(0.5); opacity: 0;
+    }to{
+        transform: scale(1); opacity: 1;
+    }
+}
+
+.window.closing{
+    animation: genieClose 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes genieClose {
+    from{
+        transform: scale(1); opacity: 1;
+    }to{
+        transform: scale(0.05); opacity: 0;
+    }
+}
+
+.window-titlebar{
+    height: 32px;
+    background: var(--window-titlebar);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 8px;
+    cursor: grab;
+    flex-shrink: 0;
+    user-select: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.window-titlebar:active{
+    cursor: grabbing;
+}
+
+.traffic-light{
+    display: flex;
+    gap: 8px;
+}
+
+.traffic-light{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: transparent;
+}
+
+.traffic-light:hover{
+    color: rgba(0,0,0,0.5);
+}
+
+.tl-close{
+    background: #ff5f57;
+}
+.tl-min{
+    background: #ffbd2e;
+}
+.tl-max{
+    background: #28c840;
+}
+
+.window-title{
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-right: 52px; /* per mettere i pallini a sinistra e bilanciare la scritta al centro*/
+}
+
+.window-content{
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.window.maximized{
+    top: 26px !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 26px) !important;
+    border-radius: 0;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 16px; height: 16px;
+    right: 0; bottom: 0;
+    cursor: nwse-resize;
+}
