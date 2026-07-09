@@ -1,0 +1,23 @@
+:root {
+  /* --- esistenti, aggiorna se necessario --- */
+  --menubar-bg: rgba(255, 255, 255, 0.55);
+  --menubar-fg: #1d1d1f;
+  --dock-bg: rgba(255,255,255,0.35);
+  --dock-border: rgba(255,255,255,0.5);
+  --window-titlebar: #ececec;
+  --window-border: rgba(0,0,0,0.15);
+
+  /* --- nuove, per il contenuto delle finestre --- */
+  --window-bg: #ffffff;
+  --window-text: #333333;
+  --window-title-text: #444444;
+  --wallpaper-start: #4a6fa5;
+  --wallpaper-mid: #83a8d4;
+  --wallpaper-end: #a9c6e8;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
