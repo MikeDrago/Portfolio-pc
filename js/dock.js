@@ -17,7 +17,7 @@ const dock = document.getElementById('dock');
 const icons = document.querySelectorAll('.dock-icon');
 const activeAppName = document.getElementById('activeAppName');
 
-const Max_Scale = 1.6;
+const Max_Scale = 1.3;
 const Distance_Range = 100; 
 
 dock.addEventListener('mousemove', (e)=> {

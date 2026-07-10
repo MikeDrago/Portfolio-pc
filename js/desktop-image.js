@@ -6,8 +6,6 @@ const projects = [
         name: 'Lime',
         top: 60,  left: 60,
         thumb: 'https://placehold.co/150x150/6c8ebf/ffffff?text=P1',
-        preview: 'https://placehold.co/600x300/6c8ebf/ffffff?text=Progetto+1',
-        description: 'Breve descrizione del progetto 1. Sostituisci con la tua vera descrizione, tecnologie usate, ecc.',
         link: '#'
     },
     {
@@ -15,8 +13,6 @@ const projects = [
         name: 'Progetto 2',
         top: 180, left: 260,
         thumb: 'https://placehold.co/150x150/b56576/ffffff?text=P2',
-        preview: 'https://placehold.co/600x300/b56576/ffffff?text=Progetto+2',
-        description: 'Breve descrizione del progetto 2.',
         link: '#'
       },
       {
@@ -24,8 +20,6 @@ const projects = [
         name: 'Progetto 3 con nome un po lungo',
         top: 320, left: 90,
         thumb: 'https://placehold.co/150x150/588157/ffffff?text=P3',
-        preview: 'https://placehold.co/600x300/588157/ffffff?text=Progetto+3',
-        description: 'Breve descrizione del progetto 3.',
         link: '#'
       }
 ];
@@ -57,7 +51,7 @@ projects.forEach(project =>{
     icon.addEventListener('dblclick', ()=>{
         icon.classList.add('opening');
         setTimeout(()=>icon.classList.remove('opening'), 200);
-        openProjectWindow(project, icon);
+        openProjectWindow(project.link, '_blank');
     });
 });
 
