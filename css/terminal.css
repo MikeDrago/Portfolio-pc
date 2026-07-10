@@ -1,0 +1,57 @@
+.terminal{
+    background: #1a1a1a;
+    height: 100%;
+    padding: 14px 16px;
+    font-family: "SF Mono", "Fira Code", Consolas, Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #d4d4d4;
+    overflow-y: auto;
+}
+
+.terminal-line{
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.prompt-symbol{
+    color: #4ec9b0;
+}
+
+.prompt-path{
+    color: #569cd6;
+}
+
+.cdm-text{
+    color: #d4d4d4;
+}
+
+.output-text{
+    color: #9cdcfe;
+}
+
+.output-highlight{
+    color: #ce9178;
+}
+
+.output-success{
+    color: #6a9955;
+}
+
+.cursor{
+    display: inline-block;
+    width: 7px;
+    height: 14px;
+    background: #d4d4d4;
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 50%{
+        opacity: 1;
+    } 51.01%, 100%{
+        opacity: 0;
+    }
+}

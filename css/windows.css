@@ -6,7 +6,7 @@
     min-width: 280px;
     min-height: 180px;
     height: 320px;
-    background: #fff;
+    background: var(--window-bg);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.35);
@@ -91,7 +91,7 @@
     text-align: center;
     font-size: 13px;
     font-weight: 600;
-    color: #444;
+    color: var(--window-title-text);
     margin-right: 52px; /* per mettere i pallini a sinistra e bilanciare la scritta al centro*/
 }
 
